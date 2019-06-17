@@ -3,42 +3,18 @@
   <!-- Navigation index tabs for HTML output -->
   <navindex>
     <tab type="mainpage" visible="yes" title=""/>
-    <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="modules" visible="yes" title="" intro=""/>
-    <tab type="namespaces" visible="yes" title="">
-      <tab type="namespacelist" visible="yes" title="" intro=""/>
-      <tab type="namespacemembers" visible="yes" title="" intro=""/>
-    </tab>
-    <tab type="interfaces" visible="yes" title="">
-      <tab type="interfacelist" visible="yes" title="" intro=""/>
-      <tab type="interfaceindex" visible="$ALPHABETICAL_INDEX" title=""/> 
-      <tab type="interfacehierarchy" visible="yes" title="" intro=""/>
-    </tab>
-    <tab type="classes" visible="yes" title="">
-      <tab type="classlist" visible="yes" title="" intro=""/>
-      <tab type="classindex" visible="$ALPHABETICAL_INDEX" title=""/> 
-      <tab type="hierarchy" visible="yes" title="" intro=""/>
-      <tab type="classmembers" visible="yes" title="" intro=""/>
-    </tab>
-    <tab type="structs" visible="yes" title="">
-      <tab type="structlist" visible="yes" title="" intro=""/>
-      <tab type="structindex" visible="$ALPHABETICAL_INDEX" title=""/> 
-    </tab>
-    <tab type="exceptions" visible="yes" title="">
-      <tab type="exceptionlist" visible="yes" title="" intro=""/>
-      <tab type="exceptionindex" visible="$ALPHABETICAL_INDEX" title=""/> 
-      <tab type="exceptionhierarchy" visible="yes" title="" intro=""/>
-    </tab>
-    <tab type="files" visible="yes" title="">
-      <tab type="filelist" visible="yes" title="" intro=""/>
-      <tab type="globals" visible="yes" title="" intro=""/>
-    </tab>
+    <tab type="namespacelist" visible="yes" title="Namespaces" intro=""/>
+    <tab type="classlist" visible="yes" title="Classes" intro=""/>
+    <tab type="structlist" visible="yes" title="Structs" intro=""/>
+    <tab type="exceptionlist" visible="yes" title="Exceptions" intro=""/>
+    <tab type="filelist" visible="yes" title="Files" intro=""/>
     <tab type="examples" visible="yes" title="" intro=""/>  
   </navindex>
 
   <!-- Layout definition for a class page -->
   <class>
-    <briefdescription visible="yes"/>
+    <detaileddescription title=""/>
     <includes visible="$SHOW_INCLUDE_FILES"/>
     <inheritancegraph visible="$CLASS_GRAPH"/>
     <collaborationgraph visible="$COLLABORATION_GRAPH"/>
@@ -76,7 +52,6 @@
       <related title="" subtitle=""/>
       <membergroups visible="yes"/>
     </memberdecl>
-    <detaileddescription title=""/>
     <memberdef>
       <inlineclasses title=""/>
       <typedefs title=""/>
@@ -97,7 +72,7 @@
 
   <!-- Layout definition for a namespace page -->
   <namespace>
-    <briefdescription visible="yes"/>
+    <detaileddescription title=""/>
     <memberdecl>
       <nestednamespaces visible="yes" title=""/>
       <constantgroups visible="yes" title=""/>
@@ -113,7 +88,6 @@
       <variables title=""/>
       <membergroups visible="yes"/>
     </memberdecl>
-    <detaileddescription title=""/>
     <memberdef>
       <inlineclasses title=""/>
       <typedefs title=""/>
@@ -128,7 +102,7 @@
 
   <!-- Layout definition for a file page -->
   <file>
-    <briefdescription visible="yes"/>
+    <detaileddescription title=""/>
     <includes visible="$SHOW_INCLUDE_FILES"/>
     <includegraph visible="$INCLUDE_GRAPH"/>
     <includedbygraph visible="$INCLUDED_BY_GRAPH"/>
@@ -149,7 +123,6 @@
       <variables title=""/>
       <membergroups visible="yes"/>
     </memberdecl>
-    <detaileddescription title=""/>
     <memberdef>
       <inlineclasses title=""/>
       <defines title=""/>
@@ -165,7 +138,7 @@
 
   <!-- Layout definition for a group page -->
   <group>
-    <briefdescription visible="yes"/>
+    <detaileddescription title=""/>
     <groupgraph visible="$GROUP_GRAPHS"/>
     <memberdecl>
       <nestedgroups visible="yes" title=""/>
@@ -190,7 +163,6 @@
       <friends title=""/>
       <membergroups visible="yes"/>
     </memberdecl>
-    <detaileddescription title=""/>
     <memberdef>
       <pagedocs/>
       <inlineclasses title=""/>
@@ -215,12 +187,11 @@
 
   <!-- Layout definition for a directory page -->
   <directory>
-    <briefdescription visible="yes"/>
+    <detaileddescription title=""/>
     <directorygraph visible="yes"/>
     <memberdecl>
       <dirs visible="yes"/>
       <files visible="yes"/>
     </memberdecl>
-    <detaileddescription title=""/>
   </directory>
 </doxygenlayout>

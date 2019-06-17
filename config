@@ -32,7 +32,7 @@ GENERATE_TESTLIST      = NO
 GENERATE_BUGLIST       = NO
 GENERATE_DEPRECATEDLIST= NO
 SHOW_USED_FILES        = NO
-SHOW_FILES             = NO
+SHOW_FILES             = YES
 SHOW_NAMESPACES        = YES
 LAYOUT_FILE            = layout.xml
 
@@ -76,6 +76,7 @@ HTML_TIMESTAMP         = YES
 HTML_DYNAMIC_MENUS     = YES
 HTML_DYNAMIC_SECTIONS  = NO
 HTML_INDEX_NUM_ENTRIES = 1
+HTML_EXTRA_STYLESHEET = width.css
 
 #---------------------------------------------------------------------------
 # Configuration options related to the dot tool
