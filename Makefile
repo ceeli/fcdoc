@@ -1,3 +1,3 @@
 doc:
-	rm -Rf ./html
+	rm -Rf ./docs
 	doxygen config
