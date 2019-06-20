@@ -22,7 +22,8 @@ HIDE_UNDOC_MEMBERS     = YES
 HIDE_UNDOC_CLASSES     = YES
 HIDE_FRIEND_COMPOUNDS  = YES
 HIDE_IN_BODY_DOCS      = YES
-SHOW_INCLUDE_FILES     = NO
+SHOW_INCLUDE_FILES     = YES
+STRIP_FROM_INC_PATH    = /home/ceeli/gsoc/fork/src/
 INLINE_INFO            = NO
 SORT_MEMBER_DOCS       = YES
 SORT_BRIEF_DOCS        = NO
@@ -76,7 +77,7 @@ HTML_TIMESTAMP         = YES
 HTML_DYNAMIC_MENUS     = YES
 HTML_DYNAMIC_SECTIONS  = NO
 HTML_INDEX_NUM_ENTRIES = 1
-HTML_EXTRA_STYLESHEET = width.css
+HTML_EXTRA_STYLESHEET = width.css details.css
 
 #---------------------------------------------------------------------------
 # Configuration options related to the dot tool

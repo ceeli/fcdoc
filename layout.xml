@@ -14,8 +14,8 @@
 
   <!-- Layout definition for a class page -->
   <class>
-    <detaileddescription title=""/>
     <includes visible="$SHOW_INCLUDE_FILES"/>
+    <detaileddescription title=""/>
     <inheritancegraph visible="$CLASS_GRAPH"/>
     <collaborationgraph visible="$COLLABORATION_GRAPH"/>
     <memberdecl>
@@ -102,10 +102,10 @@
 
   <!-- Layout definition for a file page -->
   <file>
-    <detaileddescription title=""/>
     <includes visible="$SHOW_INCLUDE_FILES"/>
     <includegraph visible="$INCLUDE_GRAPH"/>
     <includedbygraph visible="$INCLUDED_BY_GRAPH"/>
+    <detaileddescription title=""/>
     <sourcelink visible="yes"/>
     <memberdecl>
       <interfaces visible="yes" title=""/>
