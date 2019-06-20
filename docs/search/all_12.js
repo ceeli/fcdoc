@@ -1,7 +1,8 @@
 var searchData=
 [
   ['sampleallfacets',['SampleAllFacets',['../classMeshCore_1_1MeshSearchNeighbours.html#ac59b2ae74171d2ddb9e8444f7a160e68',1,'MeshCore::MeshSearchNeighbours']]],
-  ['save',['save',['../classApp_1_1Document.html#a16eb83b4ffab41ceda760b9e74437ad5',1,'App::Document::save()'],['../classGui_1_1MacroCommand.html#a7f52ea1426eb96ad774d4a5f577b0448',1,'Gui::MacroCommand::save()'],['../classGui_1_1Document.html#a87c9efaffd3e09a18caeaf0b785f000e',1,'Gui::Document::save()'],['../classBase_1_1Persistence.html#a6401a8fc57d2b01ce2771b6a7be3b949',1,'Base::Persistence::Save()'],['../classApp_1_1PropertyPythonObject.html#a27fcb3a7736de76dff63c5f963414496',1,'App::PropertyPythonObject::Save()'],['../classGui_1_1Document.html#accc7bdfbb36ea907f78805399cb3edd8',1,'Gui::Document::Save()']]],
+  ['save',['Save',['../classBase_1_1Persistence.html#a6401a8fc57d2b01ce2771b6a7be3b949',1,'Base::Persistence::Save()'],['../classApp_1_1PropertyPythonObject.html#a27fcb3a7736de76dff63c5f963414496',1,'App::PropertyPythonObject::Save()'],['../classGui_1_1Document.html#accc7bdfbb36ea907f78805399cb3edd8',1,'Gui::Document::Save()'],['../classApp_1_1Document.html#a16eb83b4ffab41ceda760b9e74437ad5',1,'App::Document::save()'],['../classGui_1_1MacroCommand.html#a7f52ea1426eb96ad774d4a5f577b0448',1,'Gui::MacroCommand::save()'],['../classGui_1_1Document.html#a87c9efaffd3e09a18caeaf0b785f000e',1,'Gui::Document::save()']]],
+  ['saveandload',['saveAndLoad',['../classDocumentTest.html#abf5ae193098c1e53aa3a410ce128d52b',1,'DocumentTest']]],
   ['saveany',['SaveAny',['../classMeshCore_1_1MeshOutput.html#a727028b52ab1ed0aae074661107d21ce',1,'MeshCore::MeshOutput']]],
   ['saveas',['saveAs',['../classGui_1_1Document.html#a89c4aa7f20d4be76ae9ed35b80b42f2b',1,'Gui::Document']]],
   ['saveasciiply',['SaveAsciiPLY',['../classMeshCore_1_1MeshOutput.html#a41f93229b0827c88d20d7c7c9c63afcf',1,'MeshCore::MeshOutput']]],
@@ -80,7 +81,7 @@ var searchData=
   ['sequencer',['Sequencer',['../classGui_1_1Sequencer.html',1,'Gui::Sequencer'],['../classGui_1_1Sequencer.html#a83c81414c4ab8a366e7c7857ceb4bab0',1,'Gui::Sequencer::Sequencer()']]],
   ['sequencerbase',['SequencerBase',['../classBase_1_1SequencerBase.html',1,'Base::SequencerBase'],['../classBase_1_1SequencerBase.html#acd55430d006eaed93aff6efda9dd9178',1,'Base::SequencerBase::SequencerBase()']]],
   ['sequencerlauncher',['SequencerLauncher',['../classBase_1_1SequencerLauncher.html',1,'Base']]],
-  ['set',['Set',['../classMeshCore_1_1MeshFacetIterator.html#ad83c39b1d8ac07d60cb62e517253259f',1,'MeshCore::MeshFacetIterator::Set()'],['../classMeshCore_1_1MeshPointIterator.html#a6eb8d006fcbac260a3a75c2f6be37fe9',1,'MeshCore::MeshPointIterator::Set()'],['../classApp_1_1Color.html#a4dc979ff8824e18cdeea9b33c52f9610',1,'App::Color::set()'],['../classApp_1_1Material.html#a4913b1e76d8a1b5ae84d80f82acbbb7d',1,'App::Material::set()']]],
+  ['set',['set',['../classApp_1_1Color.html#a4dc979ff8824e18cdeea9b33c52f9610',1,'App::Color::set()'],['../classApp_1_1Material.html#a4913b1e76d8a1b5ae84d80f82acbbb7d',1,'App::Material::set()'],['../classMeshCore_1_1MeshFacetIterator.html#ad83c39b1d8ac07d60cb62e517253259f',1,'MeshCore::MeshFacetIterator::Set()'],['../classMeshCore_1_1MeshPointIterator.html#a6eb8d006fcbac260a3a75c2f6be37fe9',1,'MeshCore::MeshPointIterator::Set()']]],
   ['set1value',['set1Value',['../classApp_1_1PropertyBoolList.html#a42bf23d4776d3c5db89fe90854966dcb',1,'App::PropertyBoolList']]],
   ['setactivedocument',['setActiveDocument',['../classApp_1_1Application.html#a1a06125d0927974cef823e53b5c1bf15',1,'App::Application::setActiveDocument()'],['../classGui_1_1Application.html#a8dd971b3810f60c0d3ad0120169330bd',1,'Gui::Application::setActiveDocument()']]],
   ['setactivewindow',['setActiveWindow',['../classGui_1_1MainWindow.html#ab559d994e0908ca750b5b8cab9814d29',1,'Gui::MainWindow']]],
@@ -426,7 +427,7 @@ var searchData=
   ['surfacenormal',['SurfaceNormal',['../structSpiralHelper.html#a5baa265dbe74e7bd17a33ddf89819049',1,'SpiralHelper']]],
   ['surfacepoint',['SurfacePoint',['../structSpiralHelper.html#a651c153da13e9643864704f6fb358748',1,'SpiralHelper']]],
   ['surround',['Surround',['../classMeshCore_1_1MeshAlgorithm.html#acb36a5f7063f25a76739e5caa3fe66ca',1,'MeshCore::MeshAlgorithm']]],
-  ['swap',['swap',['../classMesh_1_1MeshObject.html#a1509174106ee72d227e45e7a2101e185',1,'Mesh::MeshObject::swap()'],['../classMeshCore_1_1MeshKernel.html#a0b774c9f6c040f638daf7f9c49ffe668',1,'MeshCore::MeshKernel::Swap()']]],
+  ['swap',['Swap',['../classMeshCore_1_1MeshKernel.html#a0b774c9f6c040f638daf7f9c49ffe668',1,'MeshCore::MeshKernel::Swap()'],['../classMesh_1_1MeshObject.html#a1509174106ee72d227e45e7a2101e185',1,'Mesh::MeshObject::swap()']]],
   ['swapedge',['SwapEdge',['../classMeshCore_1_1MeshTopoAlgorithm.html#ab2be6ae8beacbda2efbbd7ed6103b9b6',1,'MeshCore::MeshTopoAlgorithm']]],
   ['swapedgebenefit',['SwapEdgeBenefit',['../classMeshCore_1_1MeshTopoAlgorithm.html#a9c146383a145b5639df13c3e711f8821',1,'MeshCore::MeshTopoAlgorithm']]],
   ['swapmesh',['swapMesh',['../classMesh_1_1PropertyMeshKernel.html#a092727e112e15e24ab0fd47bed1d1639',1,'Mesh::PropertyMeshKernel::swapMesh(MeshObject &amp;)'],['../classMesh_1_1PropertyMeshKernel.html#a2a2559b365d682641075f3adff522afa',1,'Mesh::PropertyMeshKernel::swapMesh(MeshCore::MeshKernel &amp;)']]],

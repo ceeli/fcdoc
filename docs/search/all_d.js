@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['name',['Name',['../classBase_1_1Observer.html#a48324004b29d7e4af1e72d2fe55c59df',1,'Base::Observer::Name()'],['../classGui_1_1StatusBarObserver.html#abeac5a0938c76d7a21eaa035e1e8dbcd',1,'Gui::StatusBarObserver::Name()'],['../classGui_1_1DockWnd_1_1ReportOutput.html#a2b0f2e4d678362f765b1bbe9f5fd06d0',1,'Gui::DockWnd::ReportOutput::Name()'],['../classGui_1_1Workbench.html#a6c48d8dd12b5452a34f6a5fa948dd782',1,'Gui::Workbench::name()']]],
+  ['name',['name',['../classGui_1_1Workbench.html#a6c48d8dd12b5452a34f6a5fa948dd782',1,'Gui::Workbench::name()'],['../classBase_1_1Observer.html#a48324004b29d7e4af1e72d2fe55c59df',1,'Base::Observer::Name()'],['../classGui_1_1StatusBarObserver.html#abeac5a0938c76d7a21eaa035e1e8dbcd',1,'Gui::StatusBarObserver::Name()'],['../classGui_1_1DockWnd_1_1ReportOutput.html#a2b0f2e4d678362f765b1bbe9f5fd06d0',1,'Gui::DockWnd::ReportOutput::Name()']]],
   ['nanometre',['NanoMetre',['../classBase_1_1Quantity.html#a2e8335feb0086f2257c2ce8023c3d52e',1,'Base::Quantity']]],
   ['navigationstyle',['NavigationStyle',['../classGui_1_1NavigationStyle.html',1,'Gui']]],
   ['navigationstyleevent',['NavigationStyleEvent',['../classGui_1_1NavigationStyleEvent.html',1,'Gui']]],

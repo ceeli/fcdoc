@@ -16,7 +16,7 @@ var searchData=
   ['view3dinventorviewerpy',['View3DInventorViewerPy',['../classGui_1_1View3DInventorViewerPy.html',1,'Gui']]],
   ['viewprojmatrix',['ViewProjMatrix',['../classBase_1_1ViewProjMatrix.html',1,'Base']]],
   ['viewprojmethod',['ViewProjMethod',['../classBase_1_1ViewProjMethod.html',1,'Base']]],
-  ['viewprovider',['ViewProvider',['../classPartDesignGui_1_1ViewProvider.html',1,'PartDesignGui::ViewProvider'],['../classGui_1_1ViewProvider.html',1,'Gui::ViewProvider']]],
+  ['viewprovider',['ViewProvider',['../classGui_1_1ViewProvider.html',1,'Gui::ViewProvider'],['../classPartDesignGui_1_1ViewProvider.html',1,'PartDesignGui::ViewProvider']]],
   ['viewproviderannotationlabel',['ViewProviderAnnotationLabel',['../classGui_1_1ViewProviderAnnotationLabel.html',1,'Gui']]],
   ['viewproviderbody',['ViewProviderBody',['../classPartDesignGui_1_1ViewProviderBody.html',1,'PartDesignGui']]],
   ['viewproviderdragger',['ViewProviderDragger',['../classGui_1_1ViewProviderDragger.html',1,'Gui']]],
