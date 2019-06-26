@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['add_5fobject',['ADD_OBJECT',['../FCTest_8h.html#a1a007f390a6a3a57f384ce68fc248fc1',1,'FCTest.h']]],
   ['area_5fclipper_5ffill_5ftype',['AREA_CLIPPER_FILL_TYPE',['../AreaParams_8h.html#a054926391dca923db5c9bffa0481764e',1,'AreaParams.h']]],
   ['area_5fparams_5fall',['AREA_PARAMS_ALL',['../AreaParams_8h.html#a4226c45e8f69a36bf24a9dc6925fabd4',1,'AreaParams.h']]],
   ['area_5fparams_5farc_5fplane',['AREA_PARAMS_ARC_PLANE',['../AreaParams_8h.html#ae7f43918bb72b7b94c7fbe87248a76a0',1,'AreaParams.h']]],
