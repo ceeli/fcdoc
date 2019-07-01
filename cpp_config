@@ -35,7 +35,7 @@ GENERATE_DEPRECATEDLIST= NO
 SHOW_USED_FILES        = NO
 SHOW_FILES             = YES
 SHOW_NAMESPACES        = YES
-LAYOUT_FILE            = layout.xml
+LAYOUT_FILE            = cpp_layout.xml
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files

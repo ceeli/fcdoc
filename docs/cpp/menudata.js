@@ -26,4 +26,5 @@ var menudata={children:[
 {text:"Modules",url:"modules.html"},
 {text:"Namespaces",url:"namespaces.html"},
 {text:"Classes",url:"annotated.html"},
-{text:"Files",url:"files.html"}]}
+{text:"Files",url:"files.html"},
+{text:"Python",url:"../py/index.html"}]}

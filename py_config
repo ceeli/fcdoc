@@ -34,8 +34,8 @@ GENERATE_BUGLIST       = NO
 GENERATE_DEPRECATEDLIST= NO
 SHOW_USED_FILES        = NO
 SHOW_FILES             = YES
-SHOW_NAMESPACES        = YES
-LAYOUT_FILE            = layout.xml
+SHOW_NAMESPACES        = NO
+LAYOUT_FILE            = py_layout.xml
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
