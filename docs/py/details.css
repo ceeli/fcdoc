@@ -1,0 +1,11 @@
+body > .contents > .groupheader:first-of-type {
+	display: none;
+}
+
+.textblock > p:first-of-type {
+	font-weight: bold;
+}
+
+.contents > p:first-child {
+	background: lightgoldenrodyellow;
+}
