@@ -2,7 +2,7 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 
-PROJECT_NAME           = "FreeCAD"
+PROJECT_NAME           = "FreeCAD C++"
 OUTPUT_LANGUAGE        = English
 ABBREVIATE_BRIEF       = ""
 INHERIT_DOCS           = NO
