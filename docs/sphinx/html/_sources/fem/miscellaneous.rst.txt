@@ -1,0 +1,5 @@
+Miscellaneus
+============
+
+.. automodule:: femtools.femutils
+   :members:

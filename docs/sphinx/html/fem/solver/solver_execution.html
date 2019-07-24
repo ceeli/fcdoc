@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Solver Execution &mdash; FreeCAD  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Threading Backend (Tasks)" href="threading_backend.html" />
+    <link rel="prev" title="Solver Components" href="solver_components.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo-freecad.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../part/part.html">Part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../partdesign/partdesign.html">Part Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sketcher/sketcher.html">Sketcher</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../fem.html">FEM</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Solver Framework</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="solver_components.html">Solver Components</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Solver Execution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-femsolver.run">The <code class="docutils literal notranslate"><span class="pre">run</span></code> Module</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="threading_backend.html">Threading Backend (Tasks)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="equations.html">Equations (Physics)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="settings.html">Settings/Parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mesh/mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arch/arch.html">Arch</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FreeCAD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../fem.html">FEM</a> &raquo;</li>
+        
+          <li><a href="overview.html">Solver Framework</a> &raquo;</li>
+        
+      <li>Solver Execution</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/fem/solver/solver_execution.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="solver-execution">
+<h1>Solver Execution<a class="headerlink" href="#solver-execution" title="Permalink to this headline">¶</a></h1>
+<p>The Solver Framework has a great demand for user supplied settings because it
+interfaces with a lot of external software and every user envrionment is a
+little bit different. A more sophisticated abbroach than just using FreeCADs
+Parameter System directely was taken to tackle this problem.</p>
+<div class="section" id="module-femsolver.run">
+<span id="the-run-module"></span><h2>The <code class="docutils literal notranslate"><span class="pre">run</span></code> Module<a class="headerlink" href="#module-femsolver.run" title="Permalink to this headline">¶</a></h2>
+<p>Execute Solver and obtain Reports and Results.</p>
+<p>Integral part of the Solver Framework which contains components responsible for
+executing the solver in the background. Also provides an asynchronous
+communication system with the solver running in the background. The purpose of
+this module is to be as generic as possible. It can execute every solver
+supported by the fem workbench. The threading and communication support is
+mainly implemented by the <a class="reference internal" href="threading_backend.html#module-femsolver.task" title="femsolver.task"><code class="xref py py-mod docutils literal notranslate"><span class="pre">femsolver.task</span></code></a> and <a class="reference internal" href="threading_backend.html#module-femsolver.signal" title="femsolver.signal"><code class="xref py py-mod docutils literal notranslate"><span class="pre">femsolver.signal</span></code></a>
+modules.</p>
+<dl class="exception">
+<dt id="femsolver.run.DirectoryDoesNotExistError">
+<em class="property">exception </em><code class="sig-prename descclassname">femsolver.run.</code><code class="sig-name descname">DirectoryDoesNotExistError</code><a class="headerlink" href="#femsolver.run.DirectoryDoesNotExistError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="exception">
+<dt id="femsolver.run.MustSaveError">
+<em class="property">exception </em><code class="sig-prename descclassname">femsolver.run.</code><code class="sig-name descname">MustSaveError</code><a class="headerlink" href="#femsolver.run.MustSaveError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="femsolver.run.getMachine">
+<code class="sig-prename descclassname">femsolver.run.</code><code class="sig-name descname">getMachine</code><span class="sig-paren">(</span><em class="sig-param">solver</em>, <em class="sig-param">path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#femsolver.run.getMachine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or create <code class="xref py py-class docutils literal notranslate"><span class="pre">Machine</span></code> using caching mechanism.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solver</strong> – A document object which must be a famework complient solver. This means
+that it should be derived from the document object provided by
+<a class="reference internal" href="solver_components.html#module-femsolver.solverbase" title="femsolver.solverbase"><code class="xref py py-mod docutils literal notranslate"><span class="pre">femsolver.solverbase</span></code></a> and implement all required methods
+correctely. Of particular importance is <code class="xref py py-meth docutils literal notranslate"><span class="pre">getMachine</span></code> as it is used by this method
+to create a new <code class="xref py py-class docutils literal notranslate"><span class="pre">Machine</span></code> on cache miss.</p></li>
+<li><p><strong>path</strong> – A valid filesystem path which shall be associetad with the machine.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femsolver.run.run_fem_solver">
+<code class="sig-prename descclassname">femsolver.run.</code><code class="sig-name descname">run_fem_solver</code><span class="sig-paren">(</span><em class="sig-param">solver</em>, <em class="sig-param">working_dir=None</em><span class="sig-paren">)</span><a class="headerlink" href="#femsolver.run.run_fem_solver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute <em>solver</em> of the solver framwork.</p>
+<p>Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">getMachine</span></code> to obtain a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Machine</span></code> instance of the solver. It than executes the Machine with
+using the <code class="docutils literal notranslate"><span class="pre">RESULTS</span></code> target (see <code class="xref py py-class docutils literal notranslate"><span class="pre">Machine</span></code> for infos about
+different targets). This method is blocking, it waits for the solver to
+finished before returning. Be aware of <code class="xref py py-class docutils literal notranslate"><span class="pre">Machine</span></code> caching when using
+the function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solver</strong> – A document object which must be a famework complient solver. This means
+that it should be derived from the document object provided by
+<a class="reference internal" href="solver_components.html#module-femsolver.solverbase" title="femsolver.solverbase"><code class="xref py py-mod docutils literal notranslate"><span class="pre">femsolver.solverbase</span></code></a> and implement all required methods
+correctely. Of particular importance is <code class="xref py py-meth docutils literal notranslate"><span class="pre">getMachine</span></code> as it is used by this method
+the get the <code class="xref py py-class docutils literal notranslate"><span class="pre">Machine</span></code> used to execute the solver.</p></li>
+<li><p><strong>working_dir</strong> – If specified it overwrites the automatic and user configurable working
+directory management of the Solver framework. Should always be a
+absolute path because the location of the binary is not consistent
+among platforms. If <code class="docutils literal notranslate"><span class="pre">None</span></code> the automatic working directory management
+is used.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>There is some legacy code to execute the old Calculix solver
+(pre-framework) which behaives differently because it doesn’t use a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Machine</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="threading_backend.html" class="btn btn-neutral float-right" title="Threading Backend (Tasks)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="solver_components.html" class="btn btn-neutral float-left" title="Solver Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Community
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

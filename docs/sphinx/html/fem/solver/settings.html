@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Settings/Parameter &mdash; FreeCAD  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Utilities" href="../utilities.html" />
+    <link rel="prev" title="Solver Document Object" href="solverbase.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html">
+          
+
+          
+            
+            <img src="../../_static/logo-freecad.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../part/part.html">Part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../partdesign/partdesign.html">Part Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sketcher/sketcher.html">Sketcher</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../fem.html">FEM</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="overview.html">Solver Framework</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="solverbase.html">Solver Document Object</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Settings/Parameter</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-femsolver.settings">The <code class="docutils literal notranslate"><span class="pre">settings</span></code> Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameter-definitions">Parameter Definitions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../utilities.html">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../mesh/mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../arch/arch.html">Arch</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">FreeCAD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../fem.html">FEM</a> &raquo;</li>
+        
+          <li><a href="overview.html">Solver Framework</a> &raquo;</li>
+        
+      <li>Settings/Parameter</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/fem/solver/settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="settings-parameter">
+<h1>Settings/Parameter<a class="headerlink" href="#settings-parameter" title="Permalink to this headline">¶</a></h1>
+<p>The Solver Framework has a great demand for user supplied settings because it
+interfaces with a lot of external software and every user envrionment is a
+little bit different. A more sophisticated abbroach than just using FreeCADs
+Parameter System directely was taken to tackle this problem.</p>
+<p>All options are abstracted away behind functions of the
+<a class="reference internal" href="#module-femsolver.settings" title="femsolver.settings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">femsolver.settings</span></code></a> module. See the following module documentation for
+more information. All parameters used in the background are documented in
+<a class="reference internal" href="#parameter-definitions"><span class="std std-ref">Parameter Definitions</span></a>.</p>
+<div class="section" id="module-femsolver.settings">
+<span id="the-settings-module"></span><h2>The <code class="docutils literal notranslate"><span class="pre">settings</span></code> Module<a class="headerlink" href="#module-femsolver.settings" title="Permalink to this headline">¶</a></h2>
+<p>Query FEM specific settings including solver settings.</p>
+<p>Query settings from the hierarchically organized settings/parameter system of
+FreeCAD related to the FEM module. The collection of independed functions use
+the settings system as a backend and expose a easy to use interface for other
+modules of the FEM module.</p>
+<p>Functions quering solver specific settings always take a solver name as a
+string to identify the solver in question. At the moment the following solvers
+are supported:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Calculix</p></li>
+<li><p>ElmerSolver</p></li>
+<li><p>Z88</p></li>
+</ul>
+</div></blockquote>
+<p>To query settings about those solver the solver name must be given exactely in
+the form written in the list above. To make the solver recognize settings for a
+new solver have a look at <code class="xref py py-class docutils literal notranslate"><span class="pre">_SolverDlg</span></code>.</p>
+<dl class="class">
+<dt id="femsolver.settings.DirSetting">
+<em class="property">class </em><code class="sig-prename descclassname">femsolver.settings.</code><code class="sig-name descname">DirSetting</code><a class="headerlink" href="#femsolver.settings.DirSetting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enum of possible directory setting values.</p>
+<p>Strings used to indicate the solver directory setting set in FreeCADs
+setting system. Returned by <a class="reference internal" href="#femsolver.settings.get_dir_setting" title="femsolver.settings.get_dir_setting"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_dir_setting()</span></code></a> for that purpose. There
+are three different possible values:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TEMPORARY</strong> – Let FreeCAD manage (create, delete) the working directories for all
+solver. Use temporary directories.</p></li>
+<li><p><strong>BESIDE</strong> – Create a directory in the same folder in which the FCStd file of the
+document is located. Use Subfolder for each solver (e.g. for a file
+./mydoc.FCStd and a solver with the label Elmer002 use
+./mydoc/Elmer002).</p></li>
+<li><p><strong>CUSTOM</strong> – Use directory set below. Create own subdirectory for every solver. Name
+directory after the solver label prefixed with the document name.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femsolver.settings.get_binary">
+<code class="sig-prename descclassname">femsolver.settings.</code><code class="sig-name descname">get_binary</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#femsolver.settings.get_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find binary of solver <em>name</em> honoring user settings.</p>
+<p>Return the specific path set by the user in FreeCADs settings/parameter
+system if set or the default binary name if no specific path is set. If no
+path was found because the solver <em>name</em> isn’t supported <code class="docutils literal notranslate"><span class="pre">None</span></code> is
+returned. This method does not check whether the binary actually exists
+and is callable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – solver id as a <code class="docutils literal notranslate"><span class="pre">str</span></code> (see <a class="reference internal" href="#module-femsolver.settings" title="femsolver.settings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">femsolver.settings</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femsolver.settings.get_custom_dir">
+<code class="sig-prename descclassname">femsolver.settings.</code><code class="sig-name descname">get_custom_dir</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femsolver.settings.get_custom_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get value for <a class="reference internal" href="#term-general-customdirectorypath"><span class="xref std std-term">General/CustomDirectoryPath</span></a> parameter.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="femsolver.settings.get_dir_setting">
+<code class="sig-prename descclassname">femsolver.settings.</code><code class="sig-name descname">get_dir_setting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#femsolver.settings.get_dir_setting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return directory setting set by the user.</p>
+<p>Return one of the three possible values of the <a class="reference internal" href="#femsolver.settings.DirSetting" title="femsolver.settings.DirSetting"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirSetting</span></code></a> enum
+depending on the setting set in FreeCAD parameter system. Result dependes
+on the values of <a class="reference internal" href="#term-general-usetempdirectory"><span class="xref std std-term">General/UseTempDirectory</span></a>,
+<a class="reference internal" href="#term-general-usebesidedirectory"><span class="xref std std-term">General/UseBesideDirectory</span></a> and <a class="reference internal" href="#term-general-usecustomdirectory"><span class="xref std std-term">General/UseCustomDirectory</span></a>.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="femsolver.settings.get_write_comments">
+<code class="sig-prename descclassname">femsolver.settings.</code><code class="sig-name descname">get_write_comments</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#femsolver.settings.get_write_comments" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check whether “write_comments” is set for solver.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the “write_comments” setting/parameter is set for the
+solver with the id <em>name</em>. Returns <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. If the solver isn’t
+supported <code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>name</strong> – solver id as a <code class="docutils literal notranslate"><span class="pre">str</span></code> (see <a class="reference internal" href="#module-femsolver.settings" title="femsolver.settings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">femsolver.settings</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="parameter-definitions">
+<span id="id1"></span><h2>Parameter Definitions<a class="headerlink" href="#parameter-definitions" title="Permalink to this headline">¶</a></h2>
+<p>All parameers are children of
+<strong>User parameter:BaseApp/Preferences/Mod/Fem/</strong>.</p>
+<div class="section" id="general-settings">
+<h3>General Settings<a class="headerlink" href="#general-settings" title="Permalink to this headline">¶</a></h3>
+<dl class="glossary simple">
+<dt id="term-general-usetempdirectory">General/UseTempDirectory</dt><dd><p>Let FreeCAD manage (create, delete) the working directories for all
+solver. Use temporary directories. If set
+<a class="reference internal" href="#term-general-usebesidedirectory"><span class="xref std std-term">General/UseBesideDirectory</span></a> and <a class="reference internal" href="#term-general-usecustomdirectory"><span class="xref std std-term">General/UseCustomDirectory</span></a>
+are always unset.</p>
+</dd>
+<dt id="term-general-usebesidedirectory">General/UseBesideDirectory</dt><dd><p>Create a directory in the same folder in which the FCStd file of the
+document is located. Use Subfolder for each solver (e.g. for a file
+./mydoc.FCStd and a solver with the label Elmer002 use ./mydoc/Elmer002).
+If set <a class="reference internal" href="#term-general-usetempdirectory"><span class="xref std std-term">General/UseTempDirectory</span></a> and
+<a class="reference internal" href="#term-general-usecustomdirectory"><span class="xref std std-term">General/UseCustomDirectory</span></a> are always unset.</p>
+</dd>
+<dt id="term-general-usecustomdirectory">General/UseCustomDirectory</dt><dd><p>Use directory set below. Create own subdirectory for every solver. Name
+directory after the solver label prefixed with the document name.  If set
+<a class="reference internal" href="#term-general-usetempdirectory"><span class="xref std std-term">General/UseTempDirectory</span></a> and <a class="reference internal" href="#term-general-usebesidedirectory"><span class="xref std std-term">General/UseBesideDirectory</span></a>
+are always unset.</p>
+</dd>
+<dt id="term-general-customdirectorypath">General/CustomDirectoryPath</dt><dd><p>If <a class="reference internal" href="#term-general-usecustomdirectory"><span class="xref std std-term">General/UseCustomDirectory</span></a> is set this option specifies the
+directory path as a string. Can be empty (<code class="docutils literal notranslate"><span class="pre">str</span></code>) if a different option
+for directory management is used.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="elmer-settings">
+<h3>Elmer Settings<a class="headerlink" href="#elmer-settings" title="Permalink to this headline">¶</a></h3>
+<dl class="glossary simple">
+<dt id="term-elmer-usestandardelmerlocation">Elmer/UseStandardElmerLocation</dt><dd><p>If set the hardcoded default binary name will be used to execute
+ElmerSolver. The value of <a class="reference internal" href="#term-elmer-elmerbinarypath"><span class="xref std std-term">Elmer/elmerBinaryPath</span></a> is ignored in
+that case. If unset the value of <a class="reference internal" href="#term-elmer-elmerbinarypath"><span class="xref std std-term">Elmer/elmerBinaryPath</span></a> is used
+instead.</p>
+</dd>
+<dt id="term-elmer-elmerbinarypath">Elmer/elmerBinaryPath</dt><dd><p>User supplied path to the ElmerSolver binary. Used only if
+<a class="reference internal" href="#term-elmer-usestandardelmerlocation"><span class="xref std std-term">Elmer/UseStandardElmerLocation</span></a> is unset.</p>
+</dd>
+<dt id="term-elmer-usestandardgridlocation">Elmer/UseStandardGridLocation</dt><dd><p>If set the hardcoded default binary name will be used to execute
+ElmerGrid. The value of <a class="reference internal" href="#term-elmer-gridbinarypath"><span class="xref std std-term">Elmer/gridBinaryPath</span></a> is ignored in
+that case. If unset the value of <a class="reference internal" href="#term-elmer-gridbinarypath"><span class="xref std std-term">Elmer/gridBinaryPath</span></a> is used
+instead.</p>
+</dd>
+<dt id="term-elmer-gridbinarypath">Elmer/gridBinaryPath</dt><dd><p>User supplied path to the ElmerGrid binary. Used only if
+<a class="reference internal" href="#term-elmer-usestandardgridlocation"><span class="xref std std-term">Elmer/UseStandardGridLocation</span></a> is unset.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="calculix-settings">
+<h3>Calculix Settings<a class="headerlink" href="#calculix-settings" title="Permalink to this headline">¶</a></h3>
+<dl class="glossary simple">
+<dt id="term-ccx-usestandardccxlocation">Ccx/UseStandardCcxLocation</dt><dd><p>If set the hardcoded default binary name will be used to execute
+Calculix. The value of <a class="reference internal" href="#term-ccx-ccxbinarypath"><span class="xref std std-term">Ccx/ccxBinaryPath</span></a> is ignored in
+that case. If unset the value of <a class="reference internal" href="#term-ccx-ccxbinarypath"><span class="xref std std-term">Ccx/ccxBinaryPath</span></a> is used
+instead.</p>
+</dd>
+<dt id="term-ccx-ccxbinarypath">Ccx/ccxBinaryPath</dt><dd><p>User supplied path to the Calculix binary. Used only if
+<a class="reference internal" href="#term-ccx-usestandardccxlocation"><span class="xref std std-term">Ccx/UseStandardCcxLocation</span></a> is unset.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="z88-settings">
+<h3>Z88 Settings<a class="headerlink" href="#z88-settings" title="Permalink to this headline">¶</a></h3>
+<dl class="glossary simple">
+<dt id="term-z88-usestandardz88location">Z88/UseStandardZ88Location</dt><dd><p>If set the hardcoded default binary name will be used to execute
+Z88. The value of <a class="reference internal" href="#term-z88-z88binarypath"><span class="xref std std-term">Z88/z88BinaryPath</span></a> is ignored in
+that case. If unset the value of <a class="reference internal" href="#term-z88-z88binarypath"><span class="xref std std-term">Z88/z88BinaryPath</span></a> is used
+instead.</p>
+</dd>
+<dt id="term-z88-z88binarypath">Z88/z88BinaryPath</dt><dd><p>User supplied path to the Z88 binary. Used only if
+<a class="reference internal" href="#term-z88-usestandardz88location"><span class="xref std std-term">Z88/UseStandardZ88Location</span></a> is unset.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../utilities.html" class="btn btn-neutral float-right" title="Utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="solverbase.html" class="btn btn-neutral float-left" title="Solver Document Object" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Community
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

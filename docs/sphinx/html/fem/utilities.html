@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Utilities &mdash; FreeCAD  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mesh" href="../mesh/mesh.html" />
+    <link rel="prev" title="Settings" href="solver/settings.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo-freecad.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../part/part.html">Part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../partdesign/partdesign.html">Part Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sketcher/sketcher.html">Sketcher</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fem.html">FEM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="solver/overview.html">Solver Framework</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mesh/mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../arch/arch.html">Arch</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FreeCAD</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="fem.html">FEM</a> &raquo;</li>
+        
+      <li>Utilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/fem/utilities.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-femtools.femutils">
+<span id="utilities"></span><h1>Utilities<a class="headerlink" href="#module-femtools.femutils" title="Permalink to this headline">¶</a></h1>
+<p>Collection of functions for the Fem module.</p>
+<p>This module contains function for managing a analysis and all the differnet
+types of objects it contains, helper for executing a simulation, function for
+extracting relevant parts of geometry and a few unrelated function useful at
+various places in the Fem module.</p>
+<dl class="function">
+<dt id="femtools.femutils.createObject">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">createObject</code><span class="sig-paren">(</span><em class="sig-param">doc</em>, <em class="sig-param">name</em>, <em class="sig-param">proxy</em>, <em class="sig-param">viewProxy</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.createObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add python object to document using python type string.</p>
+<p>Add a document object suitable for the <em>proxy</em> and the <em>viewProxy</em> to <em>doc</em>
+and attach it to the <em>proxy</em> and the <em>viewProxy</em>. This function can only be
+used with python proxies that specify their C++ type via the BaseType class
+member (e.g. Cube.BaseType). If there already exists a object with <em>name</em> a
+suitable unique name is generated. To auto generate a name pass <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>doc</strong> – document object to which the object is added</p></li>
+<li><p><strong>name</strong> – string of the name of new object in <em>doc</em>, use
+<code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> to generate a name</p></li>
+<li><p><strong>proxy</strong> – python proxy for new object</p></li>
+<li><p><strong>viewProxy</strong> – view proxy for new object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reference to new object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.findAnalysisOfMember">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">findAnalysisOfMember</code><span class="sig-paren">(</span><em class="sig-param">member</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.findAnalysisOfMember" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find Analysis the <em>member</em> belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>member</strong> – a document object</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>If a analysis that contains <em>member</em> can be found a reference is returned.
+If no such object exists in the document of <em>member</em>, <code class="docutils literal notranslate"><span class="pre">None</span></code> is returned.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.getBoundBoxOfAllDocumentShapes">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">getBoundBoxOfAllDocumentShapes</code><span class="sig-paren">(</span><em class="sig-param">doc</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.getBoundBoxOfAllDocumentShapes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate bounding box containing all objects inside <em>doc</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A bounding box containing all objects that have a <em>Shape</em> attribute (all
+Part and PartDesign objects). If the document contains no such objects or
+no objects at all return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.getSelectedFace">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">getSelectedFace</code><span class="sig-paren">(</span><em class="sig-param">selectionex</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.getSelectedFace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return selected face if exactly one face is selected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The selcted face as a <code class="docutils literal notranslate"><span class="pre">Part::TopoShape</span></code> if exactly one face is selected.
+Otherwise return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd>
+<dt class="field-even">Parameters</dt>
+<dd class="field-even"><p><strong>selectionex</strong> – A list of selection object like the one Gui.Selection.getSelectionEx()
+returns.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.get_member">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">get_member</code><span class="sig-paren">(</span><em class="sig-param">analysis</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.get_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of all members of <em>analysis</em> of type <em>t</em>.</p>
+<p>Search <em>analysis</em> for members of type <em>t</em>. This method checks the custom
+python typesytem (BaseType class property) used by the Fem module if
+possible. If the object doens’t use the python typesystem the usual
+isDerivedFrom from the C++ dynamic type system is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – only objects part of this analysis are considered</p></li>
+<li><p><strong>t</strong> – only objects of this type are returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>Inheritance of Fem types is not checked. If <em>obj</em> uses Fems typesystem the
+type is just checked for equality. If the type doesn’t match
+<code class="docutils literal notranslate"><span class="pre">obj.isDerivedFrom</span></code> is called as usual. See
+<a class="reference external" href="https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625">https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.get_mesh_to_solve">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">get_mesh_to_solve</code><span class="sig-paren">(</span><em class="sig-param">analysis</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.get_mesh_to_solve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find one and only mesh object of <em>analysis</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>A tuple <code class="docutils literal notranslate"><span class="pre">(object,</span> <span class="pre">message)</span></code>. If and only if the analysis contains
+exactely one mesh object the first value of the tuple is the mesh document
+object. Otherwise the first value is <code class="docutils literal notranslate"><span class="pre">None</span></code> and the second value is a
+error message indicating what went wrong.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.get_pref_working_dir">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">get_pref_working_dir</code><span class="sig-paren">(</span><em class="sig-param">solver_obj</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.get_pref_working_dir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return working directory for solver honoring user settings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Throws femsolver.run.MustSaveError</dt>
+<dd class="field-odd"><p>If user setting is set to BESIDE and the document isn’t saved.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>Not working correctely for most cases because this circumvents directory
+caching of the solver framework. For solver use getMachine from run.py
+instead.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.get_refshape_type">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">get_refshape_type</code><span class="sig-paren">(</span><em class="sig-param">fem_doc_object</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.get_refshape_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return shape type the constraints references.</p>
+<p>Determine single shape type of references of <em>fem_doc_object</em> which must be
+a constraint (=have a <em>References</em> property). All references must be of the
+same type which is than returned as a string. A type can be “Vertex”,
+“Edge”, “Face” or “Solid”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>fem_doc_object</strong> – A constraint object with a <em>References</em> property.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A string representing the shape type (“Vertex”, “Edge”, “Face” or
+“Solid”). If <em>fem_doc_object</em> isn’t a contraint <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> is returned.</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Undefined behaviour if the type of the references of one object arn’t all
+the same.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>Undefined behaviour if constraint contains no references (empty list).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.get_several_member">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">get_several_member</code><span class="sig-paren">(</span><em class="sig-param">analysis</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.get_several_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get members and pack them for Calculix/Z88.</p>
+<p>Collect members by calling <a class="reference internal" href="#femtools.femutils.get_member" title="femtools.femutils.get_member"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_member()</span></code></a> and pack them into a
+data structure that can be consumed by calculix and Z88 solver modules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – see <a class="reference internal" href="#femtools.femutils.get_member" title="femtools.femutils.get_member"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_member()</span></code></a></p></li>
+<li><p><strong>t</strong> – see <a class="reference internal" href="#femtools.femutils.get_member" title="femtools.femutils.get_member"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_member()</span></code></a></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list containing one dict per member. Each dict has two entries:
+<code class="docutils literal notranslate"><span class="pre">&quot;Object&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;RefShapeType&quot;</span></code>. <code class="docutils literal notranslate"><span class="pre">dict[&quot;Object&quot;]</span></code> contains the
+member document object. <code class="docutils literal notranslate"><span class="pre">dict[&quot;RefShapeType&quot;]</span></code> contains the shape type
+of the <em>References</em> property of the member (used by constraints) as a
+string (“Vertex”, “Edge”, “Face” or “Solid”). If the member doesn’t have a
+<em>References</em> property <code class="docutils literal notranslate"><span class="pre">dict[&quot;RefShapeType&quot;]</span></code> is the empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code>.</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Undefined behaviour if one of the members has a <em>References</em> property
+which is empty.</p>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>Undefined behaviour if the type of the references of one object arn’t all
+the same.</p>
+</dd>
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Inheritance of Fem types is not checked. If <em>obj</em> uses Fems typesystem the
+type is just checked for equality. If the type doesn’t match
+<code class="docutils literal notranslate"><span class="pre">obj.isDerivedFrom</span></code> is called as usual. See
+<a class="reference external" href="https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625">https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.get_single_member">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">get_single_member</code><span class="sig-paren">(</span><em class="sig-param">analysis</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.get_single_member" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return one object of type <em>t</em> and part of <em>analysis</em>.</p>
+<p>Search <em>analysis</em> for members of type <em>t</em> and return the first one that’s
+found. This method checks the custom python typesytem (BaseType class
+property) used by the Fem module if possible. If the object doesn’t use the
+python typesystem the usual isDerivedFrom from the C++ dynamic type system
+is used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analysis</strong> – only objects part of this analysis are considered</p></li>
+<li><p><strong>t</strong> – only a object of this type is returned</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>Inheritance of Fem types is not checked. If <em>obj</em> uses Fems typesystem the
+type is just checked for equality. If the type doesn’t match
+<code class="docutils literal notranslate"><span class="pre">obj.isDerivedFrom</span></code> is called as usual. See
+<a class="reference external" href="https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625">https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.is_derived_from">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">is_derived_from</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">t</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.is_derived_from" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if <em>obj</em> is derived from <em>t</em> honoring Fems typesytem.</p>
+<p>Essentially just call <code class="docutils literal notranslate"><span class="pre">obj.isDerivedFrom(t)</span></code> and return it’s value. For
+objects using Fems typesystem (see <a class="reference internal" href="#femtools.femutils.type_of_obj" title="femtools.femutils.type_of_obj"><code class="xref py py-func docutils literal notranslate"><span class="pre">type_of_obj()</span></code></a>) return always
+True if the Fem type is equal to <em>t</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Note</dt>
+<dd class="field-odd"><p>Inheritance of Fem types is not checked. If <em>obj</em> uses Fems typesystem the
+type is just checked for equality. If the type doesn’t match
+<code class="docutils literal notranslate"><span class="pre">obj.isDerivedFrom</span></code> is called as usual. See
+<a class="reference external" href="https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625">https://forum.freecadweb.org/viewtopic.php?f=10&amp;t=32625</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.is_of_type">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">is_of_type</code><span class="sig-paren">(</span><em class="sig-param">obj</em>, <em class="sig-param">ty</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.is_of_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compare type of <em>obj</em> with <em>ty</em> honoring Fems typesystem.</p>
+<p>See <a class="reference internal" href="#femtools.femutils.type_of_obj" title="femtools.femutils.type_of_obj"><code class="xref py py-func docutils literal notranslate"><span class="pre">type_of_obj()</span></code></a> for more info about the special typesystem of
+the Fem module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>obj</em> is of type <em>ty</em>, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise. Type must match
+exactely: Derived objects are not considered to be of type of one of their
+super classes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.pydecode">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">pydecode</code><span class="sig-paren">(</span><em class="sig-param">bytestring</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.pydecode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <em>bytestring</em> as a unicode string for python 2 and 3.</p>
+<p>For python 2 <em>bytestring</em> is converted to a string of type <code class="docutils literal notranslate"><span class="pre">unicode</span></code>. For
+python 3 it is returned as is because it uses unicode for it’s <code class="docutils literal notranslate"><span class="pre">str</span></code> type
+already.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="femtools.femutils.type_of_obj">
+<code class="sig-prename descclassname">femtools.femutils.</code><code class="sig-name descname">type_of_obj</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="headerlink" href="#femtools.femutils.type_of_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return type of <em>obj</em> honoring the special typesystem of Fem.</p>
+<p>Python objects of the Fem workbench define their type via a class member
+<code class="docutils literal notranslate"><span class="pre">&lt;Class&gt;.Type</span></code>. Return this type if the property exists. If not return
+the conventional <code class="docutils literal notranslate"><span class="pre">TypeId</span></code> value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Para obj</dt>
+<dd class="field-odd"><p>a document object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../mesh/mesh.html" class="btn btn-neutral float-right" title="Mesh" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="solver/settings.html" class="btn btn-neutral float-left" title="Settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Community
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
