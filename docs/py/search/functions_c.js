@@ -101,7 +101,7 @@ var searchData=
   ['makewall',['makeWall',['../namespaceArchWall.html#abe1490f196fb1f28165faf55473ef150',1,'ArchWall']]],
   ['makewindow',['makeWindow',['../namespaceArchWindow.html#a789978fc2ffa62a19f00066b3acf970e',1,'ArchWindow']]],
   ['makewindowpreset',['makeWindowPreset',['../namespaceArchWindow.html#af1bbb2b4ec6586d108e77b913829efa7',1,'ArchWindow']]],
-  ['makewire',['makewire',['../namespaceimportSVG.html#aa039a8b6c8527b7bea4bb9b992c9a13a',1,'importSVG.makewire()'],['../group__DRAFT.html#gaecc6eb492bc4e1fc0996073891215bef',1,'Draft.makeWire()']]],
+  ['makewire',['makeWire',['../group__DRAFT.html#gaecc6eb492bc4e1fc0996073891215bef',1,'Draft.makeWire()'],['../namespaceimportSVG.html#aa039a8b6c8527b7bea4bb9b992c9a13a',1,'importSVG.makewire()']]],
   ['mergecells',['mergeCells',['../namespaceArchCommands.html#ac37be91f5b34674f97c6dc9c7889c54d',1,'ArchCommands']]],
   ['meshtoshape',['meshToShape',['../namespaceArchCommands.html#a212eee2155be7c16f8a4817ca33d1057',1,'ArchCommands']]],
   ['mirror',['mirror',['../group__DRAFT.html#ga56519732a2bca3bd3a8935948e581afd',1,'Draft']]],

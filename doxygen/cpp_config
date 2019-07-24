@@ -41,11 +41,11 @@ LAYOUT_FILE            = cpp_layout.xml
 # Configuration options related to the input files
 #---------------------------------------------------------------------------
 
-INPUT = ../fork/src/FCConfig.h \
-	../fork/src/Base \
-        ../fork/src/App \
-        ../fork/src/Gui \
-        ../fork/src/Mod
+INPUT = ../../fork/src/FCConfig.h \
+	../../fork/src/Base \
+        ../../fork/src/App \
+        ../../fork/src/Gui \
+        ../../fork/src/Mod
 
 FILE_PATTERNS          = *.h
 RECURSIVE              = YES
@@ -78,7 +78,7 @@ HTML_DYNAMIC_MENUS     = YES
 HTML_DYNAMIC_SECTIONS  = NO
 HTML_INDEX_NUM_ENTRIES = 1
 HTML_EXTRA_STYLESHEET = width.css details.css
-HTML_OUTPUT            = docs/cpp
+HTML_OUTPUT            = ../docs/cpp
 
 #---------------------------------------------------------------------------
 # Configuration options related to the dot tool

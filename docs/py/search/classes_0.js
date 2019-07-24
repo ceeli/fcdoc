@@ -27,6 +27,7 @@ var searchData=
   ['_5fpropertypercenteditor',['_PropertyPercentEditor',['../classPathScripts_1_1PathSetupSheetOpPrototypeGui_1_1__PropertyPercentEditor.html',1,'PathScripts::PathSetupSheetOpPrototypeGui']]],
   ['_5fpropertystringeditor',['_PropertyStringEditor',['../classPathScripts_1_1PathSetupSheetOpPrototypeGui_1_1__PropertyStringEditor.html',1,'PathScripts::PathSetupSheetOpPrototypeGui']]],
   ['_5frooftaskpanel',['_RoofTaskPanel',['../classArchRoof_1_1__RoofTaskPanel.html',1,'ArchRoof']]],
+  ['_5fsolverdlg',['_SolverDlg',['../classfemsolver_1_1settings_1_1__SolverDlg.html',1,'femsolver::settings']]],
   ['_5ftaskpanelfemelementfluid1d',['_TaskPanelFemElementFluid1D',['../classfemguiobjects_1_1__ViewProviderFemElementFluid1D_1_1__TaskPanelFemElementFluid1D.html',1,'femguiobjects::_ViewProviderFemElementFluid1D']]],
   ['_5ftaskpanelfemelementgeometry1d',['_TaskPanelFemElementGeometry1D',['../classfemguiobjects_1_1__ViewProviderFemElementGeometry1D_1_1__TaskPanelFemElementGeometry1D.html',1,'femguiobjects::_ViewProviderFemElementGeometry1D']]],
   ['_5ftaskpanelfemelementgeometry2d',['_TaskPanelFemElementGeometry2D',['../classfemguiobjects_1_1__ViewProviderFemElementGeometry2D_1_1__TaskPanelFemElementGeometry2D.html',1,'femguiobjects::_ViewProviderFemElementGeometry2D']]],

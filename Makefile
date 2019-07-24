@@ -4,11 +4,11 @@ doc: doxygen_cpp doxygen_py sphinx_py
 
 doxygen_cpp:
 	rm -Rf ./docs/cpp
-	doxygen cpp_config
+	cd doxygen && doxygen cpp_config
 
 doxygen_py:
 	rm -Rf ./docs/py
-	doxygen py_config
+	cd doxygen && doxygen py_config
 
 sphinx_py:
 	@sphinx-build -M html ./sphinx ./docs/sphinx
